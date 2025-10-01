@@ -63,7 +63,7 @@ jobs:
       # Any value can be used as the docker image tag. It is recommended to use a unique value
       # for each build so that multiple builds do not overwrite each other.
       - name: Generate docker image tag
-        id: generate-image-tag
+        id: generate-image-tag 
         if: steps.prerun.outputs.result != 'skip'
         run: echo "IMAGE_TAG=$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> $GITHUB_ENV && echo $IMAGE_TAG
 
