@@ -5,5 +5,5 @@ locations:
     working_directory: ./src/
     build:
       directory: ./
-      registry: "edagkeith/dagster-hybrid-test"
+      registry: docker.io/edagkeith/dagster-hybrid-test"
       # registry: ghcr.io/<org>/<image-name>
