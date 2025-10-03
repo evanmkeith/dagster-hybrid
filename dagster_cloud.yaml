@@ -6,4 +6,6 @@ locations:
     build:
       directory: ./
       registry: docker.io/edagkeith/dagster-hybrid-test
+      build_args: |
+              --platform=linux/amd64
       # registry: ghcr.io/<org>/<image-name>
