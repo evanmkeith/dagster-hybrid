@@ -158,7 +158,7 @@ jobs:
       - name: Deploy to Dagster Cloud
         id: ci-deploy
         if: steps.prerun.outputs.result != 'skip'
-        uses: dagster-io/dagster-cloud-action/actions/utils/dagster-cloud-cli@v1.11.9
+        uses: dagster-io/dagster-cloud-action/actions/utils/dagster-cloud-cli@main #dagster-io/dagster-cloud-action/actions/utils/dagster-cloud-cli@v1.11.9
         with:
           command: "ci deploy"
 
