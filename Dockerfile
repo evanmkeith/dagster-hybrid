@@ -9,5 +9,6 @@ COPY . /opt/dagster/app
 # into the default Python on PATH
 # For example, this project uses setup.py and we install all dependencies into the Docker container
 # using `pip`.
+RUN --privileged --rm tonistiigi/binfmt --install all
 
 RUN pip install -e .
