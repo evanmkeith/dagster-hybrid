@@ -71,7 +71,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2 
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       # Building and deploying the docker image requires a login step specific to the container
       # registry.
@@ -136,7 +136,7 @@ jobs:
       # and specify the same tag in multiple "set-build-output" commands. To use a different docker
       # image for each code location, use multiple "build-push-actions" with a location specific
       # tag.
-      - name: Build and upload Docker image for "quickstart_etl"
+      - name: Build and upload Docker image
         if: steps.prerun.outputs.result != 'skip'
         uses: docker/build-push-action@v4
         with:
@@ -145,7 +145,7 @@ jobs:
           tags: ${{ env.IMAGE_REGISTRY }}:${{ env.IMAGE_TAG }} 
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       - name: Update build session with image tag for quickstart_etl
         id: ci-set-build-output-example-location
