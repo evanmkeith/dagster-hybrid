@@ -29,4 +29,4 @@ RUN pip install --upgrade pip "setuptools<70.0.0"
 
 COPY . /opt/dagster/app
 
-RUN pip install -e 
+RUN pip install -e .
